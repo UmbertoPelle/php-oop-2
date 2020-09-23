@@ -9,12 +9,6 @@ class Square{
     $this -> side = $side;
   }
 
-  public function getStr() {
-    return 'Side: '. $this -> side. '<br>'
-          . 'Area: '. $this -> getArea().'<br>'
-          . 'Perimeter: '. $this -> getPer().'<br>';
-  }
-
   public function getArea(){
     return $this -> side * $this -> side;
   }
@@ -23,12 +17,45 @@ class Square{
     return $this -> side * 4;
   }
 
+  public function getStr() {
+    return 'Side: '. $this -> side. '<br>'
+    . 'Area: '. $this -> getArea().'<br>'
+    . 'Perimeter: '. $this -> getPer().'<br>';
+  }
+
   public function __toString(){
     return 'Square -><br>'. $this -> getStr() . '<br>';
+  }
+}
+
+class Cube extends Square{
+  public function getVol(){
+    return $this -> side * $this -> side * $this -> side ;
+  }
+
+  public function getSuper(){
+    return 6 * $this -> side * $this -> side ;
+  }
+
+  public function getStr() {
+    return 'Side: '. $this -> side. '<br>'
+    . 'Area: '. $this -> getVol().'<br>'
+    . 'Surface: '. $this -> getSuper().'<br>';
+  }
+
+  public function __toString(){
+    return 'Cube -><br>'. $this -> getStr() . '<br>';
   }
 }
 
 $square = new Square(2);
 $square2 = new Square(6);
 
+$cube = new Cube(4);
+$cube2 = new Cube(8);
+
 echo $square . $square2;
+
+echo "<br><br>";
+
+echo $cube . $cube2;
