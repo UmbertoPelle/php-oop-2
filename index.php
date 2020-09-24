@@ -30,11 +30,11 @@ class Square{
 
 class Cube extends Square{
   public function getVol(){
-    return $this -> side * $this -> side * $this -> side ;
+    return $this -> getArea() * $this -> side ;
   }
 
   public function getSuper(){
-    return 6 * $this -> side * $this -> side ;
+    return 6 * $this -> getArea() ;
   }
 
   public function getStr() {
